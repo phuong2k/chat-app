@@ -13,6 +13,29 @@ const WrapperStyled = styled.div`
         color: white;
         margin-left: 5px;
     }
+
+    @media screen and (max-width: 1000px){
+      flex-direction: column;
+      align-items: center;
+      .user-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .ant-avatar, .ant-btn{
+        margin-top: 10px
+      }
+      .ant-typography{
+        font-size: 0.8rem;
+        margin: 10px 0 0 0;
+      }
+      Button{
+        font-size: 0.6rem;
+        padding: 0;
+        border-radius: 12px;
+        width: 100px;
+      }
+    }
 `
 export default function UserInfo() {
   
@@ -23,7 +46,7 @@ export default function UserInfo() {
 
   return (
     <WrapperStyled>
-        <div>
+        <div className='user-container' >
             <Avatar src={photoURL}>{photoURL?"":displayName?.charAt(0)?.toUpperCase()}</Avatar>
             <Typography.Text className='username'>{displayName}</Typography.Text>
         </div>
